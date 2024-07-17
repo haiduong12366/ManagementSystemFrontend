@@ -1,6 +1,6 @@
 import axios from "axios"
 
-export const API_BASE_URL = "http://managementsystem-production.up.railway.app"
+export const API_BASE_URL = "https://managementsystem-byje.onrender.com"
 
 const Api =(jwt)=>{
     const api = axios.create({baseURL:API_BASE_URL})

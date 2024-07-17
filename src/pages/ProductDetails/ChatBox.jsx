@@ -18,6 +18,7 @@ import { BsFillImageFill } from "react-icons/bs";
 import { IoClose } from "react-icons/io5";
 import toast from "react-hot-toast";
 import { Progress } from "@/components/ui/progress";
+import { API_BASE_URL } from "@/config/api";
 
 const ChatBox = () => {
   const [message, setMessage] = useState("");
@@ -31,7 +32,7 @@ const ChatBox = () => {
   let size = imgUrl ? 70:80
 
   useEffect(() => {
-    const sock = new SockJS("http://localhost:9090/ws");
+    const sock = new SockJS(`${API_BASE_URL}/ws`);
     const client = Stom.over(sock);
 
     setStompClient(client);
