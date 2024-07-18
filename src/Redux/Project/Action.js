@@ -115,13 +115,12 @@ export const inviteToProject =
     dispatch({ type: INVITE_PROJECT_REQUEST });
     try {
       const res = await api.post("/api/projects/invite", { email, projectId });
-
-      console.log("invite projects", res);
+      toast.success("Invite to project success");
       const data = res.data;
       dispatch({ type: INVITE_PROJECT_SUCCESS, payload: data });
     } catch (error) {
       console.log(error);
-      toast.error("Error inviteToProject");
+      toast.error("Error invite To Project");
       dispatch({ type: INVITE_PROJECT_FAILURE, error });
     }
   };
