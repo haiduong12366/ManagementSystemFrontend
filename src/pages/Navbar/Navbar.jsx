@@ -19,6 +19,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout } from "@/Redux/Auth/Action";
 import UpdateProfile from "../Auth/UpdateProfile";
 import { useState } from "react";
+import { BASE_URL } from "@/config/api";
 
 const Navbar = () => {
   const { auth } = useSelector((store) => store);
@@ -32,7 +33,7 @@ const Navbar = () => {
   return (
     <div className="border-b py-4 px-5 flex items-center justify-between">
       <div className="flex items-center gap-3">
-        <p onClick={() => navigate("/")} className="cursor-pointer">
+        <p onClick={() => navigate(`${BASE_URL}/`)} className="cursor-pointer">
           Project Managment
         </p>
         <Dialog>
@@ -44,7 +45,7 @@ const Navbar = () => {
             <CreateProjectForm />
           </DialogContent>
         </Dialog>
-        <Button onClick={() => navigate("/upgrade_plan")} variant="ghost">
+        <Button onClick={() => navigate(`${BASE_URL}/upgrade_plan`)} variant="ghost">
           Upgrade
         </Button>
       </div>

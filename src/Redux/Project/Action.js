@@ -1,4 +1,4 @@
-import Api from "@/config/api";
+import Api, { BASE_URL } from "@/config/api";
 import {
   ACCEPT_PROJECT_FAILURE,
   ACCEPT_PROJECT_REQUEST,
@@ -137,7 +137,7 @@ export const acceptInvitation = ({ token, navigate }) => {
       dispatch({ type: ACCEPT_PROJECT_SUCCESS, payload: data });
     } catch (error) {
       console.log(error);
-      navigate("/");
+      navigate(`${BASE_URL}/`);
       toast.error("Invalid invite");
       dispatch({ type: ACCEPT_PROJECT_FAILURE, error });
     }

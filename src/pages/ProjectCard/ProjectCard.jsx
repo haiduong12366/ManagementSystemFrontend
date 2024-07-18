@@ -8,6 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { BASE_URL } from "@/config/api";
 import { DotFilledIcon, DotsVerticalIcon } from "@radix-ui/react-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -26,7 +27,7 @@ const ProjectCard = ({ item }) => {
           <div className="flex justify-between">
             <div className="flex items-center gap-5">
               <h1
-                onClick={() => navigate("/project/"+item.id)}
+                onClick={() => navigate(`${BASE_URL}/project/`+item.id)}
                 className="cursor-pointer font-bold text-lg"
               >
                 {item.name}
@@ -42,7 +43,7 @@ const ProjectCard = ({ item }) => {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
-                  <DropdownMenuItem onClick={() => navigate("/project/"+item.id)}>
+                  <DropdownMenuItem onClick={() => navigate(`${BASE_URL}/project/`+item.id)}>
                     View
                   </DropdownMenuItem>
                   {item.owner?.id==auth.user.id&&

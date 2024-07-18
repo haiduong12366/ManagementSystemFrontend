@@ -12,6 +12,7 @@ import UserList from "./UserList";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { deleteIssue } from "@/Redux/Issue/Action";
+import { BASE_URL } from "@/config/api";
 
 const IssueCard = ({ item, projectId }) => {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ const IssueCard = ({ item, projectId }) => {
         <div className="flex justify-between items-center">
           <CardTitle
             className="cursor-pointer"
-            onClick={() => navigate(`/project/${projectId}/issue/${item.id}`)}
+            onClick={() => navigate(`${BASE_URL}/project/${projectId}/issue/${item.id}`)}
           >
             {item.title}
           </CardTitle>

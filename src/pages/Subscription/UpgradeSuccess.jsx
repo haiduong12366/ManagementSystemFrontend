@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
+import { BASE_URL } from '@/config/api'
 import { getUserSubscription, upgradeSubsciption } from '@/Redux/Subscription/Action'
 import { CheckCircleIcon } from 'lucide-react'
 import { useEffect } from 'react'
@@ -35,7 +36,7 @@ const UpgradeSuccess = () => {
                 <p className='text-green-500'>Plan Type: {subscription.userSubscription?.planType}</p>
 
             </div>
-            <Button onClick={()=>navigate("/")}>Go to home</Button>
+            <Button onClick={()=>navigate(`${BASE_URL}/`)}>Go to home</Button>
         </Card>
         
     </div>

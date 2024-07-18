@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button"
+import { BASE_URL } from "@/config/api"
 import { acceptInvitation } from "@/Redux/Project/Action"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
@@ -17,7 +18,7 @@ const AcceptInvitation = () => {
   return (
     <div className="h-[85vh] flex flex-col justify-center items-center">
         <h1 className="py-5 font-semibold text-xl">You are current in project {project.acceptInvitation?.projectName} by {project.acceptInvitation?.owner}</h1>
-        <Button onClick={()=>{navigate(`/project/${project.acceptInvitation?.projectId}`)}}>Go to project {project.acceptInvitation?.projectName}</Button>
+        <Button onClick={()=>{navigate(`${BASE_URL}/project/${project.acceptInvitation?.projectId}`)}}>Go to project {project.acceptInvitation?.projectName}</Button>
     </div>
   )
 }
